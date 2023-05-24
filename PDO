@@ -1,0 +1,13 @@
+<?php
+ try {
+    $conexao = new PDO("mysqul:host= $servidor; dbname=$db", $usuario, $senha );
+
+    $conexao->serAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexao realizada com sucesso !";
+    
+ }
+ catch(PDOException $e) {
+    echo "Não foi possivel realizar a conexão.<br>". $e->getMessage();
+ }
+ $conexao = null
+ 
